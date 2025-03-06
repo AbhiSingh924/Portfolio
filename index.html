@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Anand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white p-4 flex justify-between">
+        <h1 class="text-xl font-bold">My Portfolio</h1>
+        <ul class="flex space-x-4">
+            <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+            <li><a href="#about" class="hover:text-gray-400">About</a></li>
+            <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+            <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
+            <li><a href="#accomplishments" class="hover:text-gray-400">Accomplishments</a></li>
+            <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex flex-col items-center justify-center">
+        <img src="">
+        <h2 class="text-4xl font-bold">Hey👋 I am Abhishek Anand </h2>
+        <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">A passionate developer crafting innovative solutions.</p>
+        <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">Welcome to my Portfolio</p>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="p-8 w-[900px] ">
+        <h2 class="text-3xl font-bold">About Me</h2>
+        <p class="mt-2"> I am a Passionate frontend developer with a strong foundation in software engineering concepts and a keen eye for creating seamless, user-friendly interfaces. Experienced in developing scalable and efficient solutions while adhering to best coding practices. </p>
+        <p class="mt-2">Beyond technology, I have a strong background in sports, having secured top positions in wrestling tournaments, which has instilled in me discipline, resilience, and a strong work ethic. Additionally, I am actively working on overcoming stage fear through seminar presentations, enhancing my communication and public speaking skills.</p>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="p-8">
+        <h2 class="text-3xl font-bold">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow ">
+                <h4 class="hover:underline"><a href="https://abhisingh924.github.io/expense-tracker/">Expense Tracker</a></h4>
+                <p>
+                    Developed a responsive front-end application featuring dynamic UI updates and local storage, ensuring a seamless user experience and help users manage and categorize their expenses efficiently.
+                </p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow ">
+                <h4 class="hover:underline"><a href="https://abhisingh924.github.io/login_page/">Housing Hub</a></h4>
+                <p>Developed a responsive front-end application featuring a login page with interactive animations.
+                Designed user-friendly forms and workflows, ensuring smooth navigation and accessibility, enhancing the overall user experience for account management processes.
+                </p>    
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+                <h4 class="hover:underline">Skin Scan: AI-Powered Lesion Classifier</h4>
+                <p>Skin Scan: AI-Powered Lesion Classifier
+                    The skin lesion detection project uses a fine-tuned MobileNet-based CNN model to classify images into different categories with high accuracy. The model runs locally in a web app via TensorFlow.js, ensuring privacy and user accessibility for real-time diagnosis support.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="p-8">
+        <h2 class="text-3xl font-bold">Skills</h2>
+        <p class="mt-2">Frontend: HTML, CSS, Javascript, Tailwind, React</p>
+        <p class="mt-2"> Technical Skills: C, C++, Java, Python </p>
+        <p class="mt-2"> Database: SQL </p>
+        <p class="mt-2"> Course Work: ADA, OS, DBMS, Software Engineering and Management, Software Testing, Machine Learning </p>
+    </section>
+    
+    <!-- Accomplishments Section -->
+    <section id="accomplishments" class="p-8 ">
+        <h2 class="text-3xl font-bold">Accomplishments & Honors</h2>
+        <ul class="mt-2 list-disc list-inside">
+            <li>First Position holder in Bhagalpur-Zonal Sports Meet.</li>
+            <li>Fourth place in Intercollegiate Mysore Division Wrestling Tournament.</li>
+        </ul>
+        <h3 class="text-2xl font-bold mt-4">Activities & Honors</h3>
+        <ul class="mt-2 list-disc list-inside">
+            <li>Sports: Wrestling</li>
+            <li>Conquering Stage Fear: Participated in several seminar presentation sessions in my college.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-8">
+        <h2 class="text-3xl font-bold">Contact</h2>
+        <p class="mt-2">Email: singhabhi6377@gmail.com</p>
+        <p class="mt-2">Mobile: 6377441582</p>
+        <p class="mt-2"><a href="https://github.com/AbhiSingh924" target="_blank" class="text-blue-50 hover:underline">Abhi's Github</a></p>
+        <p class="mt-2"><a href="https://www.linkedin.com/in/abhishek-anand-015215252/" target="_blank" class="text-blue-50 hover:underline">Abhi's Linkedin</a></p>
+
+        
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        &copy; 2024 My Portfolio. All Rights Reserved.
+    </footer>
+    
+    <script>
+        // Dark mode toggle
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleDarkMode = () => {
+                document.body.classList.toggle("dark");
+            };
+            document.querySelector("nav").insertAdjacentHTML("beforeend", '<button id="darkModeToggle" class="ml-4 p-2 bg-gray-700 rounded">Toggle Dark Mode</button>');
+            document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+            
+            gsap.to("#home", { opacity: 1, duration: 5.0, y: -70, ease: "power2.out", repeat: -1, yoyo: true });
+
+        });
+    </script>
+
+</body>
+</html>
