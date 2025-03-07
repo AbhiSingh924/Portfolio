@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Anand</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(191, 214, 245);
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: rgba(1, 21, 48, 0.901);
+            color: rgb(191, 219, 248);
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-all duration-300">
     
     <!-- Navbar -->
     <nav class="bg-gray-800 text-white p-4 flex justify-between">
@@ -20,14 +37,18 @@
             <li><a href="#accomplishments" class="hover:text-gray-400">Accomplishments</a></li>
             <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
         </ul>
+        <button 
+            onclick="toggleDarkMode()" 
+            class="px-6 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded-lg shadow-md">
+            Toggle Dark Mode
+        </button>
     </nav>
     
     <!-- Home Section -->
     <section id="home" class="h-screen flex flex-col items-center justify-center">
-        <img src="">
         <h2 class="text-4xl font-bold">Hey👋 I am Abhishek Anand </h2>
-        <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">A passionate developer crafting innovative solutions.</p>
-        <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">Welcome to my Portfolio</p>
+        <p class="text-lg mt-2 ">A passionate developer crafting innovative solutions.</p>
+        <p class="text-lg mt-2 ">Welcome to my Portfolio</p>
     </section>
     
     <!-- About Section -->
@@ -41,19 +62,19 @@
     <section id="projects" class="p-8">
         <h2 class="text-3xl font-bold">Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow ">
+            <div class=" p-4 rounded shadow ">
                 <h4 class="hover:underline"><a href="https://abhisingh924.github.io/expense-tracker/">Expense Tracker</a></h4>
                 <p>
                     Developed a responsive front-end application featuring dynamic UI updates and local storage, ensuring a seamless user experience and help users manage and categorize their expenses efficiently.
                 </p>
             </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow ">
+            <div class=" p-4 rounded shadow ">
                 <h4 class="hover:underline"><a href="https://abhisingh924.github.io/login_page/">Housing Hub</a></h4>
                 <p>Developed a responsive front-end application featuring a login page with interactive animations.
                 Designed user-friendly forms and workflows, ensuring smooth navigation and accessibility, enhancing the overall user experience for account management processes.
                 </p>    
             </div>
-            <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <div class=" p-4 rounded shadow">
                 <h4 class="hover:underline">Skin Scan: AI-Powered Lesion Classifier</h4>
                 <p>Skin Scan: AI-Powered Lesion Classifier
                     The skin lesion detection project uses a fine-tuned MobileNet-based CNN model to classify images into different categories with high accuracy. The model runs locally in a web app via TensorFlow.js, ensuring privacy and user accessibility for real-time diagnosis support.
@@ -89,7 +110,7 @@
     <section id="contact" class="p-8">
         <h2 class="text-3xl font-bold">Contact</h2>
         <p class="mt-2">Email: singhabhi6377@gmail.com</p>
-        <p class="mt-2">Mobile: 6377441582</p>
+        <!-- <p class="mt-2">Mobile: 6377441582</p> -->
         <p class="mt-2"><a href="https://github.com/AbhiSingh924" target="_blank" class="text-blue-50 hover:underline">Abhi's Github</a></p>
         <p class="mt-2"><a href="https://www.linkedin.com/in/abhishek-anand-015215252/" target="_blank" class="text-blue-50 hover:underline">Abhi's Linkedin</a></p>
 
@@ -102,17 +123,13 @@
     </footer>
     
     <script>
-        // Dark mode toggle
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggleDarkMode = () => {
-                document.body.classList.toggle("dark");
-            };
-            document.querySelector("nav").insertAdjacentHTML("beforeend", '<button id="darkModeToggle" class="ml-4 p-2 bg-gray-700 rounded">Toggle Dark Mode</button>');
-            document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
-            
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark'); 
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }    
             gsap.to("#home", { opacity: 1, duration: 2.5, y: -20, ease: "power2.out", repeat: -1, yoyo: true });
-
-        });
     </script>
 
 </body>
