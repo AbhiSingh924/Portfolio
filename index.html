@@ -1,215 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Anand</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Anand</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
 
-    <style>
-        /* Tooltip styles */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
+    .tooltip:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
 
-        body {
-            background-color: rgb(191, 214, 245);
-            color: black;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .dark-mode {
-            background-color: rgba(1, 21, 48, 0.901);
-            color: rgb(191, 219, 248);
-        }
-        button {
-            margin: 0px 20px;
-            border-radius: 50%;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
+    body {
+      background-color: rgb(191, 214, 245);
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: rgba(1, 21, 48, 0.901);
+      color: rgb(191, 219, 248);
+    }
+
+    button {
+      margin: 0px 20px;
+      border-radius: 50%;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-all duration-300">
-    
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gray-800/90 backdrop-blur-sm text-white p-4 flex justify-between z-50">
-        <h1 class="text-xl font-bold">My Portfolio</h1>
-        <ul class="flex space-x-4">
-            <li><a href="#home" class="hover:text-gray-400">Home</a></li>
-            <li><a href="#about" class="hover:text-gray-400">About</a></li>
-            <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
-            <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
-            <li><a href="#accomplishments" class="hover:text-gray-400">Accomplishments</a></li>
-            <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
-        </ul>
-        <button 
-            onclick="toggleDarkMode()" 
-            class="px-6 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded-lg shadow-md flex items-center gap-2">
-            <i class="fas fa-moon transition-all duration-300 dark:hidden"></i>
-        </button>
-    </nav>
-    
-    <!-- Home Section -->
-    <section id="home" class="h-screen flex flex-col items-center justify-center mt-16">
-        <h2 class="text-4xl font-bold">Hey 👋 I am Abhishek Anand </h2>
-        <p class="text-lg mt-2">A passionate developer crafting innovative solutions.</p>
-        <p class="text-lg mt-2">Welcome to my Portfolio</p>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="p-8 w-[900px] ">
-        <h2 class="text-3xl font-bold">About Me</h2>
-        <p class="mt-2"> I am a Passionate frontend developer with a strong foundation in software engineering concepts and a keen eye for creating seamless, user-friendly interfaces. Experienced in developing scalable and efficient solutions while adhering to best coding practices. </p>
-        <p class="mt-2">Beyond technology, I have a strong background in sports, having secured top positions in wrestling tournaments, which has instilled in me discipline, resilience, and a strong work ethic. Additionally, I am actively working on overcoming stage fear through seminar presentations, enhancing my communication and public speaking skills.</p>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="p-8">
-        <h2 class="text-3xl font-bold">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            <a href="https://expense-tracker-sigma-pied-63.vercel.app/">
-                <div class=" p-4 rounded shadow ">
-                    <img src="Expance.png" alt="expense-tracker" class=" w-110 h-60 p-2 rounded shadow">
-                    <h4 class="text-xl font-bold">Expense Tracker </h4>
-                    <p>
-                        Developed a responsive front-end application featuring dynamic UI updates and local storage, ensuring a seamless user experience and help users manage and categorize their expenses efficiently.
-                    </p>
-                </div>
-            </a>
-            <a href="https://abhisingh924.github.io/login_page/">
-                <div class=" p-4 rounded shadow ">
-                    <img src="houshing.png" alt="Housing Hub" class=" w-110 h-60 p-2 rounded shadow">
-                    <h4 class="text-xl font-bold">Housing Hub</h4>
-                    <p>Developed a responsive front-end application featuring a login page with interactive animations.
-                    Designed user-friendly forms and workflows, ensuring smooth navigation and accessibility, enhancing the overall user experience for account management processes.
-                    </p>    
-                </div>
-            </a>
-            <a href="//abhisingh924.github.io/Skin-Scan/">
-                <div class=" p-4 rounded shadow">
-                    <img src="skin.png" alt="Skin-Scan" class=" w-110 h-60 p-2 rounded shadow">
-                    <h4 class="text-xl font-bold">Skin Scan: AI-Powered Lesion Classifier</h4>
-                    <p>Skin Scan: AI-Powered Lesion Classifier
-                        The skin lesion detection project uses a fine-tuned MobileNet-based CNN model to classify images into different categories with high accuracy. The model runs locally in a web app via TensorFlow.js, ensuring privacy and user accessibility for real-time diagnosis support.
-                    </p>
-                </div>
-            </a>
-            <a href=" https://abhisingh924.github.io/Razorpay-clone/">
-                <div class=" p-4 rounded shadow">   
-                    <img src="razorpay.png" alt="Razorpay-clone" class=" w-110 h-60 p-2 rounded shadow">
-                    <h4 class="text-xl font-bold">Razorpay-clone</h4>
-                    <p>This web page is a responsive Razorpay clone featuring dynamic navigation menus, interactive drop-downs, and an animated gradient hero section.
-                        It showcases multiple sections including payment solutions, banking services, and detailed product information with modern UI components.
-                    </p>
-                </div>
-            </a>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="p-8">
-        <h2 class="text-3xl font-bold">Skills</h2>
-        <div class="mt-4 flex flex-wrap gap-10">
-            <div class="flex flex-col items-center gap-10 rounded shadow">
-                <p class="mb-2 font-semibold">Frontend:</p>
-                <div class="flex gap-4">
-                    <i class="fab fa-html5 text-4xl text-orange-500"></i>
-                    <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
-                    <i class="fab fa-js-square text-4xl text-yellow-400"></i>
-                    <i class="fas fa-palette text-4xl text-cyan-500"></i>
-                    <i class="fab fa-react text-4xl text-blue-400"></i>
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-10 rounded shadow">
-                <p class="mb-2 font-semibold">Technical Skills:</p>
-                <div class="grid grid-cols-4 gap-4">
-                    <i class="fas fa-copyright text-4xl text-blue-600"></i>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" 
-                    alt="C++" 
-                    class="w-12 h-12 invert dark:invert-0">
-                    <i class="fab fa-java text-4xl text-red-600"></i>
-                    <i class="fab fa-python text-4xl text-yellow-600"></i>
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-10 rounded shadow">
-                <p class="mb-2 font-semibold">Database:</p>
-                <div class="flex gap-4 items-center">
-                    <img src="https://thumbs.dreamstime.com/b/sql-icon-major-database-format-vector-illustration-color-version-208686087.jpg" 
-                         alt="SQL" 
-                         class="w-10 h-10 invert dark:invert-0">
-                </div>
-            </div>
-            <div class="flex flex-col items-center gap-10 rounded shadow">
-                <p class="mb-2 font-semibold">Course Work:</p>
-                <div class="grid grid-cols-6 gap-4 ">
-                    <i class="fas fa-code text-2xl text-purple-500"></i>            
-                    <i class="fas fa-desktop text-2xl text-blue-500"></i>
-                    <i class="fas fa-database text-2xl text-green-500"></i>
-                    <i class="fas fa-cogs text-2xl text-red-500"></i>
-                    <i class="fas fa-bug text-2xl text-yellow-500"></i>
-                    <i class="fas fa-brain text-2xl text-pink-500"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Accomplishments Section -->
-    <section id="accomplishments" class="p-8 ">
-        <h2 class="text-3xl font-bold">Accomplishments & Honors</h2>
-        <ul class="mt-2 list-disc list-inside">
-            <li>First Position holder in Bhagalpur-Zonal Sports Meet.</li>
-            <li>Fourth place in Intercollegiate Mysore Division Wrestling Tournament.</li>
-        </ul>
-        <h3 class="text-2xl font-bold mt-4">Activities & Honors</h3>
-        <ul class="mt-2 list-disc list-inside">
-            <li>Sports: Wrestling</li>
-            <li>Conquering Stage Fear: Participated in several seminar presentation sessions in my college.</li>
-        </ul>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="p-8">
-        <h2 class="text-3xl font-bold">Contact</h2>
-        <div class="mt-4 flex gap-6 items-center">
-            <a href="mailto:singhabhi6377@gmail.com" class="text-blue-50 hover:text-blue-400 transition-colors">
-                <i class="fas fa-envelope text-4xl"></i>
-            </a>
-            <a href="https://github.com/AbhiSingh924" target="_blank" class="text-blue-50 hover:text-blue-400 transition-colors">
-                <i class="fab fa-github-square text-4xl"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/abhishek-anand-015215252/" target="_blank" class="text-blue-50 hover:text-blue-400 transition-colors">
-                <i class="fab fa-linkedin text-4xl"></i>
-            </a>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-gray-800/90 backdrop-blur-sm text-white p-4 flex justify-between items-center z-50">
+    <h1 class="text-xl font-bold">My Portfolio</h1>
+
+    <!-- Hamburger Icon -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-white text-3xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Nav Links -->
+    <ul id="nav-links"
+        class="hidden md:flex space-x-4 flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent px-4 py-2 md:p-0 z-40">
+      <li><a href="#home" class="block py-2 md:py-0 hover:text-gray-400">Home</a></li>
+      <li><a href="#about" class="block py-2 md:py-0 hover:text-gray-400">About</a></li>
+      <li><a href="#projects" class="block py-2 md:py-0 hover:text-gray-400">Projects</a></li>
+      <li><a href="#skills" class="block py-2 md:py-0 hover:text-gray-400">Skills</a></li>
+      <li><a href="#accomplishments" class="block py-2 md:py-0 hover:text-gray-400">Accomplishments</a></li>
+      <li><a href="#contact" class="block py-2 md:py-0 hover:text-gray-400">Contact</a></li>
+    </ul>
+
+    <!-- Dark Mode Toggle -->
+    <button
+      onclick="toggleDarkMode()"
+      class="hidden md:flex px-6 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded-lg shadow-md items-center gap-2">
+      <i class="fas fa-moon transition-all duration-300 dark:hidden"></i>
+    </button>
+        <!-- Mobile Buttons -->
+    <div class="flex items-center gap-4 md:hidden">
+        <!-- Dark Mode Toggle for Mobile -->
+        <button 
+            onclick="toggleDarkMode()" class="text-black bg-gray-300 text-2xl rounded-lg shadow-lg">
+            <i class="fas fa-moon "></i>
+        </button>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="h-screen flex flex-col items-center justify-center mt-16">
+    <h2 class="text-4xl font-bold">Hey 👋 I am Abhishek Anand </h2>
+    <p class="text-lg mt-2">A passionate developer crafting innovative solutions.</p>
+    <p class="text-lg mt-2">Welcome to my Portfolio</p>
+  </section>
+
+  <section id="about" class="p-8 w-full max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold">About Me</h2>
+    <p class="mt-2"> I am a Passionate frontend developer with a strong foundation in software engineering concepts and a keen eye for creating seamless, user-friendly interfaces. Experienced in developing scalable and efficient solutions while adhering to best coding practices. </p>
+        <p class="mt-2">Beyond technology, I have a strong background in sports, having secured top positions in wrestling tournaments, which has instilled in me discipline, resilience, and a strong work ethic. Additionally, I am actively working on overcoming stage fear through seminar presentations, enhancing my communication and public speaking skills.</p>
+  </section>
+
+  <section id="projects" class="p-8">
+    <h2 class="text-3xl font-bold">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      <!-- Add your project cards here -->
+      <a href="https://expense-tracker-sigma-pied-63.vercel.app/" class="block hover:transform hover:scale-105 transition-transform duration-300">
+        <div class="bg-white/10 dark:bg-gray-800/30 p-4 rounded-lg shadow-md hover:shadow-lg">
+            <img src="Expance.png" alt="expense-tracker" class="w-full h-48 object-cover rounded-md">
+            <h4 class="text-xl font-bold mt-3">Expense Tracker </h4>
+            <p class="mt-2 text-sm md:text-base">
+                Developed a responsive front-end application featuring dynamic UI updates and local storage, ensuring a seamless user experience and help users manage and categorize their expenses efficiently.
+            </p>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        &copy; 2024 My Portfolio. All Rights Reserved.
-    </footer>
-    
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            document.documentElement.classList.toggle('dark');
-        }
-        gsap.to("#home", { opacity: 1, duration: 2.5, y: -20, ease: "power2.out", repeat: -1, yoyo: true });
-    </script>
+    </a>
+    <a href="https://abhisingh924.github.io/login_page/" class="block hover:transform hover:scale-105 transition-transform duration-300">
+        <div class="bg-white/10 dark:bg-gray-800/30 p-4 rounded-lg shadow-md hover:shadow-lg">
+            <img src="houshing.png" alt="Housing Hub" class="w-full h-48 object-cover rounded-md">
+            <h4 class="text-xl font-bold mt-3">Housing Hub</h4>
+            <p class="mt-2 text-sm md:text-base">Developed a responsive front-end application featuring a login page with interactive animations.
+            Designed user-friendly forms and workflows, ensuring smooth navigation and accessibility, enhancing the overall user experience for account management processes.
+            </p>    
+        </div>
+    </a>
+    <a href="//abhisingh924.github.io/Skin-Scan/" class="block hover:transform hover:scale-105 transition-transform duration-300">
+        <div class="bg-white/10 dark:bg-gray-800/30 p-4 rounded-lg shadow-md hover:shadow-lg">
+            <img src="skin.png" alt="Skin-Scan" class="w-full h-48 object-cover rounded-md">
+            <h4 class="text-xl font-bold mt-3">Skin Scan: AI-Powered Lesion Classifier</h4>
+            <p class="mt-2 text-sm md:text-base">
+                The skin lesion detection project uses a fine-tuned MobileNet-based CNN model to classify images into different categories with high accuracy. The model runs locally in a web app via TensorFlow.js, ensuring privacy and user accessibility for real-time diagnosis support.
+            </p>
+        </div>
+    </a>
+    <a href=" https://abhisingh924.github.io/Razorpay-clone/" class="block hover:transform hover:scale-105 transition-transform duration-300">
+        <div class="bg-white/10 dark:bg-gray-800/30 p-4 rounded-lg shadow-md hover:shadow-lg">   
+            <img src="razorpay.png" alt="Razorpay-clone" class="w-full h-48 object-cover rounded-md">
+            <h4 class="text-xl font-bold mt-3">Razorpay-clone</h4>
+            <p class="mt-2 text-sm md:text-base">This web page is a responsive Razorpay clone featuring dynamic navigation menus, interactive drop-downs, and an animated gradient hero section.
+                It showcases multiple sections including payment solutions, banking services, and detailed product information with modern UI components.
+            </p>
+        </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="skills" class="p-8">
+    <h2 class="text-3xl font-bold">Skills</h2>
+    <div class="mt-4 flex flex-wrap gap-10">
+      <!-- Add your skills icons/sections here -->
+      <div class="bg-white/10 dark:bg-gray-800/30 p-6 rounded-lg shadow-md">
+        <p class="mb-4 font-semibold text-xl text-center">Frontend</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <i class="fab fa-html5 text-4xl text-orange-500"></i>
+            <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+            <i class="fab fa-js-square text-4xl text-yellow-400"></i>
+            <i class="fas fa-palette text-4xl text-cyan-500"></i>
+            <i class="fab fa-react text-4xl text-blue-400"></i>
+        </div>
+    </div>
+    <div class="bg-white/10 dark:bg-gray-800/30 p-6 rounded-lg shadow-md">
+        <p class="mb-4 font-semibold text-xl text-center">Technical Skills</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <i class="fas fa-copyright text-4xl text-blue-600"></i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" 
+            alt="C++" 
+            class="w-10 h-10 invert dark:invert-0">
+            <i class="fab fa-java text-4xl text-red-600"></i>
+            <i class="fab fa-python text-4xl text-yellow-600"></i>
+        </div>
+    </div>
+    <div class="bg-white/10 dark:bg-gray-800/30 p-6 rounded-lg shadow-md">
+        <p class="mb-4 font-semibold text-xl text-center">Database</p>
+        <div class="flex flex-wrap justify-center">
+            <img src="https://thumbs.dreamstime.com/b/sql-icon-major-database-format-vector-illustration-color-version-208686087.jpg" 
+                 alt="SQL" 
+                 class="w-10 h-10 invert dark:invert-0">
+        </div>
+    </div>
+    <div class="bg-white/10 dark:bg-gray-800/30 p-6 rounded-lg shadow-md">
+        <p class="mb-4 font-semibold text-xl text-center">Course Work</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <i class="fas fa-code text-3xl text-purple-500"></i>            
+            <i class="fas fa-desktop text-3xl text-blue-500"></i>
+            <i class="fas fa-database text-3xl text-green-500"></i>
+            <i class="fas fa-cogs text-3xl text-red-500"></i>
+            <i class="fas fa-bug text-3xl text-yellow-500"></i>
+            <i class="fas fa-brain text-3xl text-pink-500"></i>
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="accomplishments" class="p-8">
+    <h2 class="text-3xl font-bold">Accomplishments & Honors</h2>
+    <ul class="mt-2 list-disc list-inside">
+      <li>First Position holder in Bhagalpur-Zonal Sports Meet.</li>
+      <li>Fourth place in Intercollegiate Mysore Division Wrestling Tournament.</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="p-8">
+    <h2 class="text-3xl font-bold">Contact</h2>
+    <div class="mt-4 flex gap-6 items-center">
+      <a href="mailto:singhabhi6377@gmail.com" class="text-blue-50 hover:text-blue-400 transition-colors">
+        <i class="fas fa-envelope text-4xl"></i>
+      </a>
+      <a href="https://github.com/AbhiSingh924" target="_blank" class="text-blue-50 hover:text-blue-400 transition-colors">
+        <i class="fab fa-github-square text-4xl"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/abhishek-anand-015215252/" target="_blank" class="text-blue-50 hover:text-blue-400 transition-colors">
+        <i class="fab fa-linkedin text-4xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    &copy; 2024 My Portfolio. All Rights Reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      document.documentElement.classList.toggle('dark');
+    }
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("hidden");
+    }
+
+    gsap.to("#home", { opacity: 1, duration: 2.5, y: -20, ease: "power2.out", repeat: -1, yoyo: true });
+  </script>
+
 </body>
 </html>
